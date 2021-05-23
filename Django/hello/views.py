@@ -15,5 +15,11 @@ def index(request):
 # def david(request):
 #     return HttpResponse("Hello, David!")
 
+# def greet(request, name):
+#     return HttpResponse(f"Hello, {name.capitalize()}!")
+
+# the 3rd argument is optional information that can be provided to the template
 def greet(request, name):
-    return HttpResponse(f"Hello, {name.capitalize()}!")
+    return render(request, "hello/greet.html", {
+        "name": name.capitalize()
+    })
